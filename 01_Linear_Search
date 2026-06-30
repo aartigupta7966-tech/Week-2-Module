@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int N, X;
+
+    // Input number of students
+    scanf("%d", &N);
+
+    int roll[N];
+
+    // Input roll numbers
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &roll[i]);
+    }
+
+    // Input roll number to search
+    scanf("%d", &X);
+
+    // Linear Search
+    for (int i = 0; i < N; i++) {
+        if (roll[i] == X) {
+            printf("Found at index %d", i);
+            return 0;
+        }
+    }
+
+    // If not found
+    printf("Not Found");
+
+    return 0;
+}
+
