@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main() {
+    int n;
+    // Take input(number of players)
+    printf("Enter number of players: ");
+    scanf("%d", &n);
+
+    int arr[n];  // taking array for storing scores
+    // taking scores as an users input
+    printf("Enter the scores:\n");
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    // Selection sort code logic 
+    for(int i = 0; i < n - 1; i++) {
+        int min = i;  // Assume the current index as shortest
+        for(int j = i + 1; j < n; j++) {
+            // find the smallest element in remaining array
+            if(arr[j] < arr[min]) {
+                min= j;
+            }
+        }
+        // Swap the current element with smallest element 
+        if(min!= i) {
+            int temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+        }
+    }
+    // Print sorted scores-
+    printf("Sorted scores:\n");
+    for(int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
